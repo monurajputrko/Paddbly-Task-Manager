@@ -42,7 +42,7 @@ const EditTaskModal = ({
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/task/update",
+        "https://paddbly-task-manager.vercel.app/task/update",
         {
           taskId: _id,
           title: task.title,

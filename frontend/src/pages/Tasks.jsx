@@ -30,7 +30,7 @@ const Tasks = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/task/get", {
+      const response = await axios.get("https://paddbly-task-manager.vercel.app/task/get", {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -48,7 +48,7 @@ const Tasks = () => {
 
   const FetchAllTasksCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/task/count", {
+      const response = await axios.get("https://paddbly-task-manager.vercel.app/task/count", {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -102,7 +102,7 @@ const Tasks = () => {
         return toast.error("Select priority");
       }
       const response = await axios.post(
-        "http://localhost:3000/task/create",
+        "https://paddbly-task-manager.vercel.app/task/create",
         data,
         {
           headers: {

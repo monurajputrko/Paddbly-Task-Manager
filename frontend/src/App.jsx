@@ -21,7 +21,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/task/get", {
+      const response = await axios.get("https://paddbly-task-manager.vercel.app/task/get", {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },

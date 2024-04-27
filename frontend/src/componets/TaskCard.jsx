@@ -48,7 +48,7 @@ const TaskCard = ({
     try {
       const status = e.target.value;
       const response = await axios.post(
-        "http://localhost:3000/task/updateStatus",
+        "https://paddbly-task-manager.vercel.app/task/updateStatus",
         { taskId: _id, status },
         {
           headers: {
@@ -68,7 +68,7 @@ const TaskCard = ({
   const handleTaskDelete = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/task/deleteTask",
+        "https://paddbly-task-manager.vercel.app/task/deleteTask",
         { taskId: _id },
         {
           headers: {
@@ -88,7 +88,7 @@ const TaskCard = ({
 
   const FetchAllTasksCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/task/count", {
+      const response = await axios.get("https://paddbly-task-manager.vercel.app/task/count", {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },

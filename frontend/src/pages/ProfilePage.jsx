@@ -38,7 +38,7 @@ const ProfilePage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/update",
+        "https://paddbly-task-manager.vercel.app/auth/update",
         {
           fullname: userInfo.fullname,
           password: userInfo.password,
