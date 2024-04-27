@@ -1,7 +1,7 @@
-import Task from "../models/task.model.js";
-import User from "../models/user.model.js";
+const Task = require("../models/task.model.js");
+const User = require("../models/user.model.js");
 
-export const createTask = async (req, res) => {
+exports.createTask = async (req, res) => {
   try {
     const { title, description, dueDate , priority, status } = req.body;
     const newTask = new Task({
@@ -24,7 +24,7 @@ export const createTask = async (req, res) => {
   }
 };
 
-export const getUserTasks = async (req, res) => {
+exports.getUserTasks = async (req, res) => {
   try {
     let filter = {};
     if (req.query.status) {
@@ -55,7 +55,7 @@ export const getUserTasks = async (req, res) => {
   }
 };
 
-export const updateTaskStatus = async (req, res) => {
+exports.updateTaskStatus = async (req, res) => {
   try {
     const { status, taskId } = req.body;
 
@@ -80,7 +80,7 @@ export const updateTaskStatus = async (req, res) => {
   }
 };
 
-export const deleteATask = async (req, res) => {
+exports.deleteATask = async (req, res) => {
   try {
     const { taskId } = req.body;
 
@@ -102,7 +102,7 @@ export const deleteATask = async (req, res) => {
   }
 };
 
-export const getTasksCount = async (req, res) => {
+exports.getTasksCount = async (req, res) => {
   try {
     let filter = {};
     if (req.query.priority) {
@@ -155,7 +155,7 @@ export const getTasksCount = async (req, res) => {
   }
 };
 
-export const updateTask = async (req, res) => {
+exports.updateTask = async (req, res) => {
   try {
     const { taskId, title, description, priority } = req.body;
 

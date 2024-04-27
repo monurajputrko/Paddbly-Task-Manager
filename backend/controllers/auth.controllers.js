@@ -1,11 +1,11 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-import User from "../models/user.model.js";
+const User = require("../models/user.model.js");
 
 let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-export const register = async (req, res) => {
+exports.register = async (req, res) => {
   const { fullname, email, password } = req.body;
 
   if (fullname.length < 3) {
@@ -56,7 +56,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = async (req, res) => {
+exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -93,7 +93,7 @@ export const login = async (req, res) => {
   }
 };
 
-export const updateProfile = async (req, res) => {
+exports.updateProfile = async (req, res) => {
   try {
     const { fullname, email, password } = req.body;
 

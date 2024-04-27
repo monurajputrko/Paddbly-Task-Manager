@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   login,
   register,
   updateProfile,
-} from "../controllers/auth.controllers.js";
-import { authetication } from "../middlewares/authenticaton.js";
+} = require("../controllers/auth.controllers.js");
+const { authetication } = require("../middlewares/authenticaton.js");
 
 const authRoute = express.Router();
 
@@ -12,4 +12,4 @@ authRoute.post("/register", register);
 authRoute.post("/login", login);
 authRoute.post("/update", authetication, updateProfile);
 
-export default authRoute;
+module.exports = authRoute;

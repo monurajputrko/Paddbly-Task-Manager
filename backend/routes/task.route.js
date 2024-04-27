@@ -1,13 +1,13 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   createTask,
   deleteATask,
   getTasksCount,
   getUserTasks,
   updateTask,
   updateTaskStatus,
-} from "../controllers/task.conrollers.js";
-import { authetication } from "../middlewares/authenticaton.js";
+} = require("../controllers/task.conrollers.js");
+const { authetication } = require("../middlewares/authenticaton.js");
 
 const taskRoute = express.Router();
 
@@ -18,4 +18,4 @@ taskRoute.post("/update", authetication, updateTask);
 taskRoute.post("/updateStatus", authetication, updateTaskStatus);
 taskRoute.post("/deleteTask", authetication, deleteATask);
 
-export default taskRoute;
+module.exports = taskRoute;
